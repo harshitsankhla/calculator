@@ -1,0 +1,9 @@
+# run files
+run
+
+# macOS specific
+.DS_Store
+
+# VS Code specific
+*.dSYM
+.vscode/

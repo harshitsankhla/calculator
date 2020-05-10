@@ -1,8 +1,21 @@
 #include<iostream>
+#include <stdexcept> 
+
 #include"calc.h"
 
 using namespace c;
 using namespace std;
+
+class Exception : public runtime_error { 
+public: 
+    /*
+    Defining constructor of class Exception 
+    that passes a string message to the runtime_error class
+    */
+    Exception() : runtime_error("Math error: Attempted to divide by Zero\n") 
+    { } 
+}; 
+
 
 calculator::calculator() {
     x = 0;
@@ -26,9 +39,10 @@ float calculator::multiplication() {
 }
 
 float calculator::division() {
-    //zero division not checked
-    result = x / y;
-    return result;
+    if(y == 0)
+        throw Exception();
+    else
+        return x / y;
 }
 
 void calculator::fillValues() {
