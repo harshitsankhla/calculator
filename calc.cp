@@ -30,6 +30,11 @@ float calculator::division() {
     result = x / y;
     return result;
 }
+float calculator::modulus() {
+    //for remainder
+    result = x % y;
+    return result;
+}
 
 void calculator::fillValues() {
     cout<<"Enter the First Value - ";
